@@ -1,0 +1,18 @@
+body{
+    background-color: black;
+}
+.main{
+    margin: 0 auto;
+    margin-top: 60PX; 
+    background-color: lightblue;
+    border-radius: 20px;
+    width: 50%;
+}
+h3{
+    color: white;
+    text-align: center;
+}
+.innerDiv{
+    margin: 5px;
+
+}

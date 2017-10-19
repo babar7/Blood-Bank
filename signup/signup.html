@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../lib/boot.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDym7CHbgk276j0M9R9xd8-DbkbzTKPYt4",
+    authDomain: "mybloodbank-a2774.firebaseapp.com",
+    databaseURL: "https://mybloodbank-a2774.firebaseio.com",
+    projectId: "mybloodbank-a2774",
+    storageBucket: "",
+    messagingSenderId: "313915923970"
+  };
+  firebase.initializeApp(config);
+</script>
+</head>
+<body>
+
+    <!--<img src="" alt="" class="rounded mx-auto d-block">-->
+    <h3>Sign up for free</h3>        
+    <div class="main">
+      <div class="form-group innerDiv">
+        <label for="fullName" class="col-form-label">Full Name</label>
+        <i class="fa fa-user" aria-hidden="true"></i>      
+        <input type="text" class="form-control" id="fullName" placeholder="First And Last Name" required>
+    </div>
+        <div class="form-group innerDiv">
+        <label for="email" class="col-form-label">Email</label>
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+        <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+    </div>
+    <div class="form-group innerDiv">
+        <label for="password" class="col-form-label">Password</label>
+        <i class="fa fa-lock" aria-hidden="true"></i>
+        <input type="password" class="form-control" id="password" placeholder="Create a password" required>
+    </div>
+    <div class="form-group innerDiv">
+          <label for="inputAddress" class="col-form-label">Address</label>
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
+    </div>
+    <div class="form-row innerDiv">
+      <div class="form-group  col-md-5">
+        <label for="cellNumber" class="col-form-label">Cell Number</label>
+        <i class="fa fa-mobile" aria-hidden="true"></i>
+        <input type="text" class="form-control" id="cellNumber" onkeypress='return event.charCode >= 48 && event.charCode <= 58' placeholder="03000000000" required>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="gender" class="col-form-label">Gender</label>
+        <i class="fa fa-male" aria-hidden="true"></i>
+        <select class="form-control" name="gender" id="gender" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="age" class="col-form-label">Age</label>
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+        <input type="number" class="form-control" id="age" required>
+      </div>
+      <div class="form-group col-md-3">
+        <label for="bloodGroup" class="col-form-label">Blood Group </label>
+        <!-- <i class="fa fa-male" aria-hidden="true"></i> -->
+        <select class="form-control" id="bloodGroup" required>
+          <option value="A Positive">A Positive</option>
+          <option value="B Negitive">A Negitive</option>
+          <option value="B Positive">B Positive</option>
+          <option value="B Negitive">B Negitive</option>
+          <option value="AB Positive">AB Positive</option>
+          <option value="AB Negitive">AB Negitive</option>
+          <option value="O Positive">O Positive</option>
+          <option value="O Negitive">O Negitive</option>
+        </select>
+      </div>
+    </div>
+      <button type="submit" class="btn btn-primary " onclick="signup()">Sign up</button>
+      <p class="text-right" style="display: inline;">Already have an account?</p>
+      <button type="submit" class="btn btn-primary" onclick="location = '../index.html'">Sign in</button>
+  </div>
+
+
+</body>
+    <script src="app.js"></script>
+    <script src="../lib/jquery.js"></script>
+    <script src="../lib/popper.js"></script>
+    <script src="../lib/boot.js"></script>
+</html>

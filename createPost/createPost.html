@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lib/boot.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/4.5.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDym7CHbgk276j0M9R9xd8-DbkbzTKPYt4",
+        authDomain: "mybloodbank-a2774.firebaseapp.com",
+        databaseURL: "https://mybloodbank-a2774.firebaseio.com",
+        projectId: "mybloodbank-a2774",
+        storageBucket: "mybloodbank-a2774.appspot.com",
+        messagingSenderId: "313915923970"
+      };
+      firebase.initializeApp(config);
+    </script>
+</head>
+<body>
+
+    <center>
+      <h1>Create Post For Blood Requirement</h1>
+      <div class="form-group col-md-4">
+        <form>
+    
+          <select class="form-control" id="bloodGroup" required>
+            <option selected>Blood Group</option>
+            <option value="A Positive">A Positive</option>
+            <option value="B Negitive">A Negitive</option>
+            <option value="B Positive">B Positive</option>
+            <option value="B Negitive">B Negitive</option>
+            <option value="AB Positive">AB Positive</option>
+            <option value="AB Negitive">AB Negitive</option>
+            <option value="O Positive">O Positive</option>
+            <option value="O Negitive">O Negitive</option>
+        </select>
+
+            <input type="text" class="form-control" id="unitRequired" placeholder="No. Of Unit Required">                     
+
+        <select id="urgency" class="form-control" required>
+          <option selected> Urgency</option>            
+          <option value="1 Day"> One Day</option>            
+          <option value="2 Days"> Two Days</option>            
+          <option value="3 Days"> Three Days</option>            
+          <option value="4 Days"> Four Days</option>            
+          <option value="5 Days"> Five Days</option>            
+          <option value="6 Days"> Six Days</option>            
+          <option value="7 Days"> Seven Days</option>            
+        </select>
+
+        <select id="country" class="form-control" required>
+          <option selected> Country</option>            
+          <option value="Pakistan"> Pakistan</option>   
+          <option value="India">India</option>
+          <option value="Iran">Iran</option>
+          <option value="China">China</option>
+          <option value="Bangladesh">Bangladesh</option>         
+        </select>
+
+        <select id="city" class="form-control" required>
+          <option selected> City </option>            
+          <option value="Karachi">Karachi</option>
+          <option value="Lahore">Lahore</option>
+          <option value="Multan">Multan</option>
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Faislabad">Faislabad</option>            
+        </select>
+
+        <select id="hospital" class="form-control" required>
+          <option selected> Hospital</option>            
+          <option value="Agha Khan"> Agha Khan University Hospital</option>            
+          <option value="Liaqat National"> Liaqat National Hospital</option>            
+          <option value="Jinah"> Jinah Hospital</option>            
+          <option value="Indus"> Indus Hospital</option>            
+        </select>
+
+          <input class="form-control" type="text" id="relation" placeholder="Your Relation With Patient" required>
+
+          <input class="form-control" type="text" id="cntctNumber" onkeypress='return event.charCode >= 48 && event.charCode <= 58'placeholder="Contact Number" required>
+
+          <textarea class="form-control" rows="3" id="exrtainfo" placeholder="Additional Instructions" ></textarea>      
+        </form>
+        <button type="button" class="btn btn-primary" onclick="post()">Create Post</button>
+    </div>
+  </center>
+
+
+
+    
+    <script src="app.js"></script>
+    <script src="../lib/jquery.js"></script>
+    <script src="../lib/popper.js"></script>
+    <script src="../lib/boot.js"></script>    
+</body>
+</html>

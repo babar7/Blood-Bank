@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="lib/boot.css">
+
+    <!-- Custom styles for this template -->
+    <link href="signin/style.css" rel="stylesheet">
+
+    
+<script src="https://www.gstatic.com/firebasejs/4.5.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDym7CHbgk276j0M9R9xd8-DbkbzTKPYt4",
+    authDomain: "mybloodbank-a2774.firebaseapp.com",
+    databaseURL: "https://mybloodbank-a2774.firebaseio.com",
+    projectId: "mybloodbank-a2774",
+    storageBucket: "mybloodbank-a2774.appspot.com",
+    messagingSenderId: "313915923970"
+  };
+  firebase.initializeApp(config);
+</script>
+
+</head>
+
+<body>
+
+    <!--<img src="" alt="" class="rounded mx-auto d-block">-->
+    <h3 class="form-signin-heading" style="text-align: center;">Sign in to this Application</h3>
+    <div class="container">
+
+        <form class="form-signin" id="stop">
+            <label for="inputEmail" ><b> Email address</b> </label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+
+            <label for="inputPassword"><b> Password </b></label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <p class="newUser"> New to Application? <a href="signup/signup.html">Create an account</a> </p>
+            <a href="feed/feed.html"> Feed </a>
+        </form>
+
+    </div>
+
+    <script src="lib/jquery.js"></script>
+    <script src="lib/popper.js"></script>
+    <script src="lib/boot.js"></script>
+</body>
+<script src="signin/signin.js"></script>
+
+</html>
