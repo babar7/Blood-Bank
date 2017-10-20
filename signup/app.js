@@ -3,29 +3,29 @@ const fullName = document.getElementById("fullName");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 const address = document.getElementById("inputAddress");
-const cellNumber = document.getElementById("cellNumber");
+const contectNumber = document.getElementById("contectNumber");
 const gender = document.getElementById("gender");
 const age = document.getElementById("age");
 const bloodGroup = document.getElementById("bloodGroup");
 
 // let function'sName = (perameters) => {body}
 let signup =() => {
-    const loggedinUser = {
+    const signupUser = {
         fullName : fullName.value,
         email : email.value,
         pass : password.value,
         address : address.value,
-        cellNumber : cellNumber.value,
+        contectNumber : contectNumber.value,
         gender : gender.value,
         age : age.value,
         bloodGroup : bloodGroup.value
     }
-// console.log(loggedInUsers);
+console.log(signupUser);
 
-firebase.auth().createUserWithEmailAndPassword(loggedinUser.email, loggedinUser.pass)
+firebase.auth().createUserWithEmailAndPassword(signupUser.email, signupUser.pass)
 .then(function (reference){
-    // console.log(reference);
-    database.child("loggedinUser/" + reference.uid).set(loggedinUser).then(function(){
+    console.log(reference);
+    database.child("signupUser/" + reference.uid).set(signupUser).then(function(){
         location = '../index.html';
     })
 

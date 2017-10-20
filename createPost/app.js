@@ -1,4 +1,5 @@
-
+const database = firebase.database().ref('/');
+const patientName = document.getElementById('patientName');
 const bloodGroup = document.getElementById('bloodGroup');
 const unitRequired = document.getElementById('unitRequired');
 const urgency = document.getElementById('urgency');
@@ -6,25 +7,27 @@ const country = document.getElementById('country');
 const city = document.getElementById('city');
 const hospital = document.getElementById('hospital');
 const relation = document.getElementById('relation');
-const cntctNumber = document.getElementById('cntctNumber');
-const exrtainfo = document.getElementById('exrtainfo');
+const contectNumber = document.getElementById('contectNumber');
+const additionalInfo = document.getElementById('additionalInfo');
 
 let post = () => {
 
-const usersInfo = {
+    const usersInfo = {
 
-    bloodGroup : bloodGroup.value,
-    unitRequired : unitRequired.value,
-    urgency : urgency.value,
-    country : country.value,
-    city : city.value,
-    hospital : hospital.value,
-    relation : relation.value,
-    cntctNumber : cntctNumber.value,
-    exrtainfo : exrtainfo.value
+        patientName : patientName.value,
+        bloodGroup : bloodGroup.value,
+        unitRequired : unitRequired.value,
+        urgency : urgency.value,
+        country : country.value,
+        city : city.value,
+        hospital : hospital.value,
+        relation : relation.value,
+        contectNumber : contectNumber.value,
+        additionalInfo : additionalInfo.value
 
-}
+    }
+        console.log(usersInfo);
 
-console.log(usersInfo);
+    database.child('bloodRequirementPost').push(usersInfo);   
 
 }

@@ -6,26 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="../lib/boot.css">
-    <script src="https://www.gstatic.com/firebasejs/4.5.2/firebase.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
     <script>
       // Initialize Firebase
       var config = {
-        apiKey: "AIzaSyDym7CHbgk276j0M9R9xd8-DbkbzTKPYt4",
-        authDomain: "mybloodbank-a2774.firebaseapp.com",
-        databaseURL: "https://mybloodbank-a2774.firebaseio.com",
-        projectId: "mybloodbank-a2774",
-        storageBucket: "mybloodbank-a2774.appspot.com",
-        messagingSenderId: "313915923970"
+        apiKey: "AIzaSyDfnnxk1HApVXXLB-pdVIXtzp4tnQdAK9M",
+        authDomain: "blood-bank-application-49cc4.firebaseapp.com",
+        databaseURL: "https://blood-bank-application-49cc4.firebaseio.com",
+        projectId: "blood-bank-application-49cc4",
+        storageBucket: "",
+        messagingSenderId: "481331303156"
       };
       firebase.initializeApp(config);
     </script>
+    
 </head>
 <body>
-  <center>
-  <div class="card" style="width: 20rem;" id="mainDiv"></div>
-  <!-- <button onclick="func('babar')">clickMe :)</button> -->
-</center> 
-    
+  <img src="../images/heart.png" alt="heart beat" class="sideImage">
+  <button class="btn btn-primary btn-lg" onclick="location = '../createPost/createPost.html'">Create Post </button>
+    <div id="mainDiv"></div>
+
   <script src="app.js"></script>
   <script src="../lib/jquery.js"></script>
   <script src="../lib/popper.js"></script>

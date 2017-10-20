@@ -1,11 +1,11 @@
-var database = firebase.database().ref('/')
+const database = firebase.database().ref('/')
 
-var email = document.getElementById('inputEmail')
-var pass = document.getElementById('inputPassword')
+const email = document.getElementById('inputEmail')
+const pass = document.getElementById('inputPassword')
 
 document.getElementById('stop').addEventListener("submit", function (event) {
         event.preventDefault()
-        var user = {
+        const user = {
             email: email.value,
             password: pass.value
         }
@@ -13,10 +13,10 @@ document.getElementById('stop').addEventListener("submit", function (event) {
         firebase.auth().signInWithEmailAndPassword(user.email, user.password)
             .then(function (res) {
                 // console.log(res.uid)
-                database.child('usersData/' + res.uid).once('value', function (snapshot) {
+                database.child('signupUser/' + res.uid).once('value', function (snapshot) {
                         var convert = JSON.stringify(snapshot.val())
-                        localStorage.setItem('loggedInUser', convert)
-                        location = '../feed/feed.html'
+                        localStorage.setItem('loggedinUser', convert)
+                        location = 'feed/feed.html'
                         console.log(convert)
                     })
             })

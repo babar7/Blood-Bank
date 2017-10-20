@@ -1,18 +1,19 @@
 body {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-image: url("../images/background.jpg");
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-attachment: fixed;
+  /* padding-top: 40px;
+  padding-bottom: 40px; */
+    background-image: url("images/life.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
 }
 .container{
-  background-color: white;
-  border: 0.05px solid #777171;
-  width: 400px;
+  margin: 0 auto;
+  background-color: rgba(190, 80, 80, 0.959);
+  border: 0.01em solid #777171;
+  width: 30rem;
   border-radius: 20px;
   /* margin-top: 80px; */
 }

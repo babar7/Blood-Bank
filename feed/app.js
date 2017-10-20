@@ -1,36 +1,55 @@
 const database = firebase.database().ref('/');
 let mainDiv = document.getElementById('mainDiv');
-let loggedInUser = localStorage.getItem('loggedInUser')
-var convertToParse = JSON.parse(loggedInUser)
+let loggedinUser = localStorage.getItem('loggedinUser');
+var convertToParse = JSON.parse(loggedinUser);
 
-console.log(convertToParse, "hi");
+ database.child('bloodRequirementPost').on('child_added', (snapshot) => {
 
+            let postDetail = snapshot.val();
+            postDetail.key = snapshot.key;
+            // console.log(postDetail);
+
+let postDiv = document.createElement('DIV');
+postDiv.className = "card postDiv";
+postDiv.style = "width: 20rem;";
+postDiv.onclick = () => {
+    console.log(postDiv);
+}
 let ul = document.createElement('UL');
 ul.className = "list-group list-group-flush";
+ul.id = postDetail.key;
 let li_1 = document.createElement('LI');
 li_1.className = "list-group-item";
-let textLi_1 = document.createTextNode(convertToParse.fName + " " + convertToParse.lName);
+let textLi_1 = document.createTextNode(`Post By : ${convertToParse.fullName}`);
 li_1.appendChild(textLi_1)
 let li_2 = document.createElement('LI');
 li_2.className = "list-group-item";
-let textLi_2 = document.createTextNode(`5 Units of AB Positive blood Required`);
+let textLi_2 = document.createTextNode(`Patients's Name : ${postDetail.patientName}`);
 li_2.appendChild(textLi_2)
 let li_3 = document.createElement('LI');
 li_3.className = "list-group-item";
-let textLi_3 = document.createTextNode(`At ${convertToParse.address} for my ${convertToParse.gender}`);
+let textLi_3 = document.createTextNode(`${postDetail.unitRequired} Units of ${postDetail.bloodGroup} blood Required`);
 li_3.appendChild(textLi_3)
 let li_4 = document.createElement('LI');
 li_4.className = "list-group-item";
-let textLi_4 = document.createTextNode(`Urgency With In 3 days`);
+let textLi_4 = document.createTextNode(`At ${postDetail.hospital} for my ${postDetail.relation}`);
 li_4.appendChild(textLi_4)
 let li_5 = document.createElement('LI');
 li_5.className = "list-group-item";
-let textLi_5 = document.createTextNode(`Contect No : ${convertToParse.cellNumber}`);
+let textLi_5 = document.createTextNode(`Urgency With In ${postDetail.urgency}`);
 li_5.appendChild(textLi_5)
-// let li_6 = document.createElement('LI');
-// li_6.className = "list-group-item";
-// let textLi_6 = document.createTextNode(`Urgency With In 3 days`);
-// li_6.appendChild(textLi_6)
+let li_6 = document.createElement('LI');
+li_6.className = "list-group-item";
+let textLi_6 = document.createTextNode(`Contect No : ${postDetail.contectNumber}`);
+li_6.appendChild(textLi_6)
+let li_7 = document.createElement('LI');
+li_7.className = "list-group-item";
+let textli_7 = document.createTextNode(`Additional Instruction : ${postDetail.additionalInfo}`);
+li_7.appendChild(textli_7)
+let volunteerBtn = document.createElement('BUTTON');
+volunteerBtn.className = "btn btn-primary";
+let volunteerBtnText =document.createTextNode("Volunteer");
+volunteerBtn.appendChild(volunteerBtnText);
 // let li_7 = document.createElement('LI');
 // li_7.className = "list-group-item";
 // let li_8 = document.createElement('LI');
@@ -41,14 +60,16 @@ ul.appendChild(li_2)
 ul.appendChild(li_3)
 ul.appendChild(li_4)
 ul.appendChild(li_5)
-// ul.appendChild(li_6)
+ul.appendChild(li_6)
+ul.appendChild(li_7)
 // ul.appendChild(li_7)
 // ul.appendChild(li_8)
-mainDiv.appendChild(ul);
-const func = name => {
-    alert(`hello ${name}`);
-} 
 
+postDiv.appendChild(ul);
+postDiv.appendChild(volunteerBtn);
+mainDiv.appendChild(postDiv);
+
+})
  // <div class="card" style="width: 20rem;">
  // <ul class="list-group list-group-flush">
 //     <li class="list-group-item">Cras justo odio</li>
