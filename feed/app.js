@@ -20,7 +20,7 @@ ul.className = "list-group list-group-flush";
 ul.id = postDetail.key;
 let li_1 = document.createElement('LI');
 li_1.className = "list-group-item";
-let textLi_1 = document.createTextNode(`Post By : ${convertToParse.fullName}`);
+let textLi_1 = document.createTextNode(`Post By : ${postDetail.postBy}`);
 li_1.appendChild(textLi_1)
 let li_2 = document.createElement('LI');
 li_2.className = "list-group-item";

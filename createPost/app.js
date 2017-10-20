@@ -9,11 +9,13 @@ const hospital = document.getElementById('hospital');
 const relation = document.getElementById('relation');
 const contectNumber = document.getElementById('contectNumber');
 const additionalInfo = document.getElementById('additionalInfo');
+const loggedinUser = JSON.parse(localStorage.getItem('loggedinUser'))
 
 let post = () => {
 
     const usersInfo = {
 
+        postBy : loggedinUser.fullName,
         patientName : patientName.value,
         bloodGroup : bloodGroup.value,
         unitRequired : unitRequired.value,
